@@ -1,7 +1,7 @@
 # packet-hunt-wireshark-soc
 Wireshark SOC lab journal: detecting SYN scans, FTP brute force, cleartext credentials and VoIP traffic through packet analysis
 
-# 🔍 Packet Hunt: Wireshark Blue-Team Lab Journal
+# 🔍 Packet Hunt: Wireshark Lab Journal
 
 **Hands-on packet analysis for SOC analysts: spotting scans, brute force, cleartext leaks and VoIP eavesdropping in captured traffic.**
 
@@ -286,14 +286,17 @@ All exercises were performed in a controlled educational lab. This repository is
 
 ---
 
-# 👤 Author
+## Author Details
 
-**Syeda Sarooj Kareem**
-Cybersecurity Intern
-LinkedIn: https://lnkd.in/p/dv6tQZPR
+| Field | Details |
+|-------|---------|
+| Student name | Syeda Sarooj Kareem |
+| Batch ID | [B084] |
+| Training program | [Cybersecurity Internship] |
+| Assignment | WK1-PM1 - Wireshark SOC Lab |
+| Repository | https://github.com/Sarooj-kareem/packet-hunt-wireshark-soc |
+| Completion date | 06-11-2026 |
+|LinkedIn   | https://lnkd.in/p/dv6tQZPR|
 
 ---
 
-## 📌 Project Information
-
-**Program:** Cyber Security Internship | **Week:** 01 | **Project:** Wireshark SOC Lab, Network Traffic Analysis | **Repository:** GitHub
