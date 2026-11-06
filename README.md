@@ -52,7 +52,7 @@ This repository documents six hands-on packet-analysis labs completed with Wires
 
 Opened the Wireshark SOC lab, which provides a Windows 11 desktop with Wireshark pre-installed for packet capture and analysis.
 
-![Lab desktop](LabEnvironment.png)
+![Lab desktop](wireshark/LabEnvironment.png)
 
 ---
 
@@ -60,7 +60,7 @@ Opened the Wireshark SOC lab, which provides a Windows 11 desktop with Wireshark
 
 Launched Wireshark, selected the active network interface, and started capturing traffic.
 
-![Start capture](Packet.png)
+![Start capture](wireshark/Packet.png)
 
 ---
 
@@ -72,7 +72,7 @@ Applied this display filter to show only connection attempts:
 tcp.flags.syn == 1 
 ```
 
-![SYN filter applied](flagsSYN.png)
+![SYN filter applied](wireshark/flagsSYN.png)
 
 
 
@@ -95,17 +95,17 @@ ftp
 ```
 ftp.response.code == 530
 ```
-![FTP failed logins](Failedlogin.png)
+![FTP failed logins](wireshark/Failedlogin.png)
 
 ```
 ftp.response.code == 230
 ```
 
-![FTP successful logins](successlogin.png)
+![FTP successful logins](wireshark/successlogin.png)
 
 Used Follow → TCP Stream to read the credential that finally worked.
 
-![FTP TCP stream](ftptcp.png)
+![FTP TCP stream](wireshark/ftptcp.png)
 
 **Findings:**
 - A long run of `530` (login incorrect) responses came from one source.
@@ -124,11 +124,11 @@ Opened **Statistics → Conversations** to find an unusual busy port, then filte
 tcp.port == 5000
 ```
 
-![Conversations window](p5000.png)
+![Conversations window](wireshark/p5000.png)
 
 Used Follow → TCP Stream to rebuild the chat between client and server.
 
-![Reconstructed chat](chatstream.png)
+![Reconstructed chat](wireshark/chatstream.png)
 
 **Findings:**
 - Identified the client and server in the conversation.
@@ -147,11 +147,11 @@ Filtered web traffic and reviewed requested pages:
 http
 ```
 
-![HTTP traffic](http.png)
+![HTTP traffic](wireshark/http.png)
 
 Followed the suspicious stream and also checked **File → Export Objects → HTTP**.
 
-![Hidden comment in response](hiddencomment.png)
+![Hidden comment in response](wireshark/hiddencomment.png)
 
 **Findings:**
 - A page contained an HTML comment never meant for visitors.
@@ -172,7 +172,7 @@ http.request.method == "POST"
 
 Expanded **HTML Form URL Encoded** in the packet details to see the submitted fields.
 
-![Form fields](urlencoded.png)
+![Form fields](wireshark/urlencoded.png)
 
 **Findings:**
 - The `/login` endpoint received form data over plain HTTP.
@@ -193,7 +193,7 @@ Reviewed call setup first:
 sip
 ```
 
-![SIP signaling](sip.png)
+![SIP](wireshark/sip.png)
 
 Then the voice stream:
 
@@ -201,11 +201,11 @@ Then the voice stream:
 rtp
 ```
 
-![RTP packets](rtp.png)
+![RTP packets](wireshark/rtp.png)
 
 Opened **Telephony → VoIP Calls** and replayed the captured audio.
 
-![VoIP Calls window](voipcalls.png)
+![VoIP Calls window](wireshark/voipcalls.png)
 
 **Findings:**
 - SIP handled call setup; RTP carried the voice.
